@@ -30,7 +30,6 @@ function update_eerything () {
   # zsh
   rsync --out-format="%n" -La ~/.zshrc ./zsh/
   rsync --out-format="%n" -La ~/.zprofile ./zsh/
-  rsync --out-format="%n" -La ~/.zsh_history ./zsh/
 
   # fzf
   rsync --out-format="%n" -La ~/.fzf.zsh ./fzf/
