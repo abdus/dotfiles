@@ -1,0 +1,8 @@
+[user]
+	email = mail@abdus.xyz
+	name = Abdus
+	signingkey = 0C9A4E9267C5385FCB99C8FFEB3966E37BA3DFD8
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim

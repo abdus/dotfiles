@@ -1,0 +1,270 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "IBM Plex Mono", "Font Awesome 5 Free", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  /* font-weight: bold; */
+}
+
+window#waybar {
+  background-color: transparent;
+  border-bottom: none;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+  background-color: #3f3f3f;
+}
+
+window#waybar.chromium {
+  background-color: #000000;
+  border: none;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  font-weight: bolder;
+  color: #000133;
+  border: 1px solid #000133;
+  border-radius: 6px;
+  padding: 0 3px;
+  margin: 4px 10px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  background: rgba(0, 1, 51, 0.2);
+  color: #ffffff;
+  box-shadow: inherit;
+}
+
+#workspaces button.focused {
+  background-color: #000133;
+  color: lightgray;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #000133;
+  color: #ffa000;
+  /* border-bottom: 3px solid #ffffff; */
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd, #custom-linuxlogo {
+  padding: 0 10px;
+  color: #ffffff;
+  border-radius: 6px;
+  margin: 4px 10px;
+  padding: 0 10px;
+}
+
+#clock {
+  background-color: #000133;
+}
+
+#battery {
+  background-color: #002147;
+}
+
+#battery.charging {
+  /*color: #ffffff;*/
+  /*background-color: #26a65b;*/
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  background-color: #003366;
+  /*color: #000000;*/
+}
+
+#memory {
+  background-color: #08457e;
+}
+
+#backlight {
+  background-color: #003153;
+  /*color: #141414;*/
+}
+
+#network {
+  background-color: #003153;
+}
+
+#network.disconnected {
+  color: #f53c3c;
+}
+
+#pulseaudio {
+  background-color: #002147;
+  /*color: #000000;*/
+}
+
+#pulseaudio.muted {
+  /*background-color: #90b1b1;*/
+  /*color: #2a5c45;*/
+}
+
+#custom-media {
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+#temperature {
+  background-color: #003366;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#tray {
+  font-size: 22px;
+  background-color: #000133;
+}
+
+#idle_inhibitor {
+  background-color: #000133;
+}
+
+/*#idle_inhibitor.activated {*/
+/*background-color: #ecf0f1;*/
+/*color: #2d3436;*/
+/*}*/
+
+#mpd {
+  background-color: #66cc99;
+  color: #2a5c45;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+  color: #ffffff;
+}
+
+#mpd.stopped {
+  background-color: #90b1b1;
+}
+
+#mpd.paused {
+  background-color: #51a37a;
+}
+
+#custom-arrow1,
+#custom-arrow2,
+#custom-arrow3,
+#custom-arrow4,
+#custom-arrow5,
+#custom-arrow6,
+#custom-arrow7,
+#custom-arrow8,
+#custom-arrow9,
+#custom-arrow10 {
+  background-color: #002147;
+  color: #000133;
+}
+
+#custom-arrow2 {
+  background-color: #003153;
+  color: #002147;
+}
+
+#custom-arrow3 {
+  background-color: #003366;
+  color: #003153;
+}
+
+#custom-arrow4 {
+  background-color: #08457e;
+  color: #003366;
+}
+
+#custom-arrow5 {
+  background-color: #003366;
+  color: #08457e;
+}
+
+#custom-arrow6 {
+  background-color: #003153;
+  color: #003366;
+}
+
+#custom-arrow7 {
+  background-color: #002147;
+  color: #003153;
+}
+
+#custom-arrow8 {
+  background-color: #000133;
+  color: #002147;
+}
+
+#custom-arrow9 {
+  background-color: transparent;
+}
+
+#custom-linuxlogo {
+  color: black;
+  font-size: 1.2em;
+}

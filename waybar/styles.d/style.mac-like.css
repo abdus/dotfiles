@@ -1,0 +1,74 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Noto Sans", "Font Awesome 5 Free", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  /* font-weight: bold; */
+}
+
+window#waybar {
+  background-color: #fff;
+  border-bottom: none;
+  color: #000;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  padding: 10px 0;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-linuxlogo {
+  padding: 0 4px;
+  color: #000;
+  border-radius: 6px;
+  margin: 4px 10px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#custom-linuxlogo {
+  color: black;
+  font-size: 1.4em;
+  font-weight: bold;
+}
