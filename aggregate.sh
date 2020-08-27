@@ -18,7 +18,7 @@ function update_eerything () {
   rsync --out-format="%n" -La ~/.config/waybar/* ./waybar/
 
   # i3status
-  rsync --out-format="%n" -La ~/.config/i3status ./i3status/
+  rsync --out-format="%n" -La ~/.config/i3status/* ./i3status/
 
   # neofetch
   rsync --out-format="%n" -La ~/.config/neofetch/* ./neofetch/
