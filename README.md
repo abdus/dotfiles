@@ -18,7 +18,7 @@ A short overview of things I use:
 - **waybar**: highly customizable status bar for wayland
 - **zsh**: my default shell
 
-### Thees
+### Themes
 
 I don't have one theme that I use everywhere. I have a set of favorite theme
 through which I keep cycling. Following are a few of them:
