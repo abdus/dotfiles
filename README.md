@@ -1,31 +1,31 @@
-<p aln="center">
+<p align="center">
   <img src="https://i.imgur.com/1pMEstg.png" alt=".files" />
 </p>
 
-> dotfles are the fles that starts wth a . (dot). ths fles are enerally
-> responsble for software confuratons. Ths repostory contans dotfles
-> use and love the ost!
+> dotfiles are the files that starts wth a . (dot). this files are generally
+> responsible for software configurations. This repository contains dotfiles
+> I use and love the most!
 
-A short overvew of thns  use:
+A short overview of things I use:
 
-- alacrtty: ths s a ternal eulator for wayland copostor.
-- fzf: fuzzy fnder. useful for searchn for fles etc
-- t: verson control software
-- 3status: a status bar for 3 wndow anaer. t's coptable wth Sway.
-- neofetch: a shell unlty for prntn syste-nfo
-- sway: wndow anaer for wayland
-- v/neov: y prary text edtor
-- waybar: hhly custozable status bar for wayland
-- zsh: y default shell
+- alacritty: this is a terminal emulator for wayland compositor.
+- fzf: fuzzy finder. useful for searching for files etc
+- git: version control software
+- i3status: a status bar for 3 window manager. it's compatible with Sway.
+- neofetch: a shell utility for printing system-info
+- sway: window manager for wayland
+- vim/neovim: my primary text editor
+- waybar: highly customizable status bar for wayland
+- zsh: my default shell
 
 ### Thees
 
- don't have one thee that  use everywhere.  have a set of favorte thees
-throuh whch  keep cycln. Follown are a few of the:
+I don't have one theme that I use everywhere. I have a set of favorite theme
+through which I keep cycling. Following are a few of them:
 
-- V/Neov: ruvbox(usn now), Palenht, OceancNext
-- Alacrtty: Palenht, Purfy
-- Zsh: flazz, anoster
+- Vim/Neovim: Gruvbox(using now), Palenight, OceanicNext
+- Alacritty: Palenight, Purify
+- Zsh: flazz, agnoster
 
 <p align="center">
   <img src="https://i.imgur.com/ux1gDBv.png" alt="" />
