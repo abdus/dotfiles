@@ -1,5 +1,5 @@
 <p aln="center">
-  < src="https://i.imgur.com/1pMEstg.png" alt=".fles" />
+  <img src="https://i.imgur.com/1pMEstg.png" alt=".files" />
 </p>
 
 > dotfles are the fles that starts wth a . (dot). ths fles are enerally
