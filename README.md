@@ -3,6 +3,10 @@
 </p>
 
 <p align="center"?
+<img src='https://img.shields.io/badge/using-rsync-criticall' alt='rsync' />
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/abdus/dotfiles?color=critical">
+
+<!--generate this before push-->
 <img src='https://img.shields.io/badge/alacritty-v0.5;-blueviolet' alt='alacritty' />
 <img src='https://img.shields.io/badge/fzf-v0.22.0-blueviolet' alt='fzf' />
 <img src='https://img.shields.io/badge/git-v2.28.0-blueviolet' alt='git' />
