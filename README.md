@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/1pMEstg.png" alt=".files" />
 </p>
 
-<p align="center"?
+<p align="center">
 <img src='https://img.shields.io/badge/using-rsync-criticall' alt='rsync' />
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/abdus/dotfiles?color=critical">
 
