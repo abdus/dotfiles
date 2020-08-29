@@ -4,14 +4,14 @@ set ignorecase              " case insensitive matching
 set mouse=v                 " middle-click paste with mouse
 set hlsearch                " highlight search results
 set tabstop=2               " number of columns occupied by a tab character
-set softtabstop=2           " see multiple spaces as tabstops so <BS> does the 
+set softtabstop=2           " see multiple spaces as tabstops so <BS> does the
                             " right thing
 set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set smartindent             " indent based on syntax
 set number                  " add line numbers
-set relativenumber          " set relative line numbers. easier navigation 
+set relativenumber          " set relative line numbers. easier navigation
                             " using navigation keys
 set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
@@ -28,8 +28,8 @@ let g:mapleader = ','       " keybinding leader
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'abdus/palenight.vim'                        " color theme
-Plug 'mhartington/oceanic-next'                   " color theme
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
+Plug 'morhetz/gruvbox'
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
@@ -68,7 +68,7 @@ call plug#end()
 " >- Colors and AirLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if (has("termguicolors"))
-  " set Vim-specific sequences for RGB colors
+  " set Vim-specific sequences for RGB colors. not required for neovim
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
@@ -77,20 +77,24 @@ endif
 "colorscheme nord                             " color theme
 "let g:airline_theme = "nord"                 " airline theme
 
-colorscheme palenight                         " color theme
-let g:palenight_terminal_italics=1
-let g:airline_theme = "palenight"             " airline theme
+"colorscheme palenight                         " color theme
+"let g:palenight_terminal_italics=1
+"let g:airline_theme = "palenight"             " airline theme
+
+let g:gruvbox_invert_selection = 0
+colorscheme gruvbox                           " color theme
+let g:airline_theme = "gruvbox"               " airline theme
 
 let g:airline#extensions#tabline#enabled = 1      " enable upper tabline
 let g:airline#extensions#tabline#fnamemod = ':t'  " no idea what this does
-let g:airline_powerline_fonts = 0                 " use powerline fonts in airline
-let g:airline#extensions#tabline#formatter = 
+let g:airline_powerline_fonts = 1                 " use powerline fonts in airline
+let g:airline#extensions#tabline#formatter =
       \'unique_tail_improved' " upper tabline filename formatter
 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >- Rust 
+" >- Rust
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rustfmt_autosave = 1                    " rust format on save
 
@@ -132,10 +136,7 @@ let wiki_default = {}
 let wiki_default.path = "~/vimwiki/"
 let wiki_default.syntax = "default"
 let wiki_default.ext = ".vimwiki"
-let wiki_default.path_html = "~/vimwiki_html"
-let wiki_default.template_path ='~/.config/nvim/vimwiki-templates/'
-let wiki_default.template_default = 'default'
-let wiki_default.template_ext = '.tpl'
+let wiki_default.path_html = "/tmp/vimwiki_html"
 
 let g:vimwiki_list = [wiki_default]
 let g:vimwiki_global_ext = 0
@@ -149,6 +150,29 @@ let g:fzf_preview_window = 'right:60%'
 let g:fzf_buffers_jump = 1              " jump to existing buffer if possible
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeShowLineNumbers = 1
+autocmd FileType nerdtree setlocal relativenumber
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- Presistent Undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('persistent_undo')
+  let storage_dir = expand('~/.cache/vim-presistent-undo/')
+
+  if !isdirectory(storage_dir)
+    call system('mkdir -p ' . storage_dir)
+  endif
+
+  " point vim to the defined undo dir
+  let &undodir = storage_dir
+
+  set undofile
+endif
 
 
 
@@ -159,7 +183,7 @@ let g:fzf_buffers_jump = 1              " jump to existing buffer if possible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-"          KEY MAPPING 
+"          KEY MAPPING
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,8 +195,8 @@ let g:fzf_buffers_jump = 1              " jump to existing buffer if possible
 inoremap <C-CR> <CR><Esc>kA<CR>|    " indented newline on Ctrl + Enter
 inoremap ii <esc>|                  " use ii to exit modes
 
-nnoremap                            
-      \ <silent><expr> <Leader>H 
+nnoremap
+      \ <silent><expr> <Leader>H
       \ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"| " toggle highlight
 
 
@@ -204,19 +228,28 @@ nnoremap <Leader>a :ALEFix<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >- Disable Arrow keys
+" >- Disable Arrow keys and PageUp PageDown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <left>  :echo "press 'h'"<CR>
 nnoremap <right> :echo "press 'l'"<CR>
 nnoremap <up>    :echo "press 'k'"<CR>
 nnoremap <down>  :echo "press 'j'"<CR>
+nnoremap <PageDown> :echo "ctrl f = 1 pg down       ctrl d = 1/2 pg down"<CR>
+nnoremap <PageUp>   :echo "ctrl b = 1 pg up         ctrl u = 1/2 pg up"<CR>
 
 vnoremap <left>  :echo "press 'h'"<CR>
 vnoremap <right> :echo "press 'l'"<CR>
 vnoremap <up>    :echo "press 'k'"<CR>
 vnoremap <down>  :echo "press 'j'"<CR>
+vnoremap <PageDown> :echo "ctrl f = 1 pg down       ctrl d = 1/2 pg down"<CR>
+vnoremap <PageUp>   :echo "ctrl b = 1 pg up         ctrl u = 1/2 pg up"<CR>
 
-
+inoremap <left>  <nop>
+inoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <PageDown> <esc>:echo "ctrl f = 1 pg down       ctrl d = 1/2 pg down"<CR>
+inoremap <PageUp>   <esc>:echo "ctrl b = 1 pg up         ctrl u = 1/2 pg up"<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >- Text Operations

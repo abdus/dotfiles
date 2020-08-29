@@ -124,6 +124,7 @@ let g:ale_fixers.html = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
+let g:ale_fixers.javascriptreact = ['prettier']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 
@@ -136,10 +137,7 @@ let wiki_default = {}
 let wiki_default.path = "~/vimwiki/"
 let wiki_default.syntax = "default"
 let wiki_default.ext = ".vimwiki"
-let wiki_default.path_html = "~/vimwiki_html"
-let wiki_default.template_path ='~/.config/nvim/vimwiki-templates/'
-let wiki_default.template_default = 'default'
-let wiki_default.template_ext = '.tpl'
+let wiki_default.path_html = "/tmp/vimwiki_html"
 
 let g:vimwiki_list = [wiki_default]
 let g:vimwiki_global_ext = 0

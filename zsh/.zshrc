@@ -112,17 +112,12 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Custom function for sending paste to hastebin
-function haste() {
-    curl -XPOST 'https://hastebin.com/documents' --data-binary @-
-}
-
-# ask to launch sway when in tty1
+#====    ask to launch sway when in tty1    ====================================
 TTY=$(tty)
 
 if [[ "$TTY" == "/dev/tty1" ]]; then
   # change tty font
-  setfont ter-powerline-v18b.psf.gz 
+  setfont ter-powerline-v18b.psf.gz
 
   printf "Want to launch SwayWM? [yN] : ";
   read RESP;
@@ -140,3 +135,30 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+
+#====    ALIAS    ==============================================================
+alias vim="/usr/bin/nvim"
+
+alias cd="cd $1"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias 3.="cd ../../../"
+
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit -m"
+alias gca="git commit --ammend -m"
+alias gpush="git push origin"
+alias gpull="git pull origin"
+
+
+#====    FUNCTIONS    ==========================================================
+function cd() {
+  builtin cd "$@" && tree -L 2 --noreport;
+}
+
+function haste() {
+  curl -XPOST 'https://hastebin.com/documents' --data-binary @-
+}
