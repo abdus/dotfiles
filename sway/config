@@ -18,12 +18,12 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu rofi -show drun -theme material -icon-theme "Papirus"
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background $HOME/Pictures/wallpaper/12.jpg fill
+output * background $HOME/Pictures/wallpaper/15.jpg fill
 #
 # Example configuration:
 #
@@ -172,8 +172,6 @@ input * {
 
     # sway-launcher
     for_window [app_id="launcher"] floating enable, border pixel 0, sticky enable
-    set $menu alacritty --dimensions 100 7 --class launcher --command sway-launcher-desktop
-    bindsym $mod+Ctrl+l exec $menu
 
     # brightness ctl
     bindsym XF86MonBrightnessUp exec brightnessctl s +10%

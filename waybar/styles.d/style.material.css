@@ -62,7 +62,7 @@ window#waybar.hidden {
 #mode,
 #idle_inhibitor,
 #mpd,
-#custom-linuxlogo {
+#custom-logo {
   padding: 0.5rem 0.7rem;
   color: #ffffff;
   margin: 10px 0;
@@ -169,11 +169,9 @@ label:focus {
   /*background-color: #000133;*/
 }
 
-#idle_inhibitor {
-  /*background-color: #000133;*/
+#custom-logo {
+  background: deeppink;
+  margin-left: 10px;
+  font-size: 1.3em;
+  color: #282a36;
 }
-
-/*#idle_inhibitor.activated {*/
-/*background-color: #ecf0f1;*/
-/*color: #2d3436;*/
-/*}*/

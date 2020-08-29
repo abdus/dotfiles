@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.npm-bin/bin:/home/crow/.gem/ruby/2.6.0/bin:/home/crow/go/bin:/home/crow/Desktop/scripts:/home/crow/.gem/ruby/2.7.0/bin:/home/crow/.local/bin:/home/crow/.cargo/bin:/home/crow/.deno/bin:~/scripts:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.npm-bin/bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/go/bin:$HOME/Desktop/scripts:$HOME/.gem/ruby/2.7.0/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.deno/bin:~/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/crow/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -153,6 +153,13 @@ alias gca="git commit --ammend -m"
 alias gpush="git push origin"
 alias gpull="git pull origin"
 
+alias zshconf="/usr/bin/nvim ~/.zshrc"
+alias swayconf="/usr/bin/nvim ~/.config/sway/config"
+alias nvimconf="/usr/bin/nvim ~/.config/nvim/init.vim"
+alias roficonf="/usr/bin/nvim ~/.config/rofi/material.rasi"
+alias waybarconf="/usr/bin/nvim ~/.config/waybar/config"
+
+alias dotfiles="cd ~/Dev/dotfiles"
 
 #====    FUNCTIONS    ==========================================================
 function cd() {

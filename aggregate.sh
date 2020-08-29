@@ -15,7 +15,7 @@ function update_eerything () {
   rsync --out-format="%n" -La ~/.config/sway/* ./sway/
 
   # waybar
-  rsync --out-format="%n" -La ~/.config/waybar/* ./waybar/
+  rsync --out-format="%n" -a ~/.config/waybar/* ./waybar/
 
   # i3status
   rsync --out-format="%n" -La ~/.config/i3status/* ./i3status/
@@ -37,6 +37,9 @@ function update_eerything () {
 
   # gitconfig
   rsync --out-format="%n" -La ~/.gitconfig ./git/
+
+  # rofi
+  rsync --out-format="%n" -La ~/.config/rofi/* ./rofi/
 
   # scripts
   rsync --out-format="%n" --exclude="bin" -La ~/scripts/* ./scripts/
