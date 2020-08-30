@@ -40,9 +40,6 @@ function update_eerything () {
 
   # rofi
   rsync --out-format="%n" -La ~/.config/rofi/* ./rofi/
-
-  # scripts
-  rsync --out-format="%n" --exclude="bin" -La ~/scripts/* ./scripts/
 }
 
 if [[ $COMMAND == "clean" ]]; then
