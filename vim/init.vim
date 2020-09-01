@@ -126,6 +126,7 @@ let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
 let g:ale_fixers.javascriptreact = ['prettier']
 let g:ale_fixers.rust = ['rustfmt']
+let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 
 
@@ -269,8 +270,9 @@ map <C-n> :NERDTreeToggle<CR>|    " Opens up NerdTree
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <space><space> :FZF<CR>|       " open fuzzy search
+nnoremap <space>F :FZF<CR>|             " open fuzzy search
 nnoremap <space>f :Filetypes<CR>|       " open filetype window
+nnoremap <space><space> :Buffers<CR>|   " open fuzzy search
 
 
 

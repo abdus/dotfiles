@@ -120,7 +120,7 @@ font:
   #
   # If the bold family is not specified, it will fall back to the
   # value specified for the normal font.
-  # family: monospace
+    #family: Inconsolata
 
   # The `style` can be specified to pick a specific face.
     style: Bold
@@ -183,42 +183,39 @@ font:
 
 # Colors (Tomorrow Night Bright)
 
-# Base16 Material Palenight - alacritty color config
-# Nate Peterson
+# gruvbox - https://github.com/morhetz/gruvbox
 colors:
   # Default colors
   primary:
-    background: '0x292d3e'
-    foreground: '0x959dcb'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x292d3e'
-    cursor: '0x959dcb'
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    black: '0x292d3e'
-    red: '0xf07178'
-    green: '0xc3e88d'
-    yellow: '0xffcb6b'
-    blue: '0x82aaff'
-    magenta: '0xc792ea'
-    cyan: '0x89ddff'
-    white: '0x959dcb'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
 
   # Bright colors
   bright:
-    black: '0x676e95'
-    red: '0xf78c6c'
-    green: '0x444267'
-    yellow: '0x32374d'
-    blue: '0x8796b0'
-    magenta: '0x959dcb'
-    cyan: '0xff5370'
-    white: '0xffffff'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
-draw_bold_text_with_bright_colors: false
+
+draw_bold_text_with_bright_colors: true
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

@@ -62,7 +62,9 @@ window#waybar.hidden {
 #mode,
 #idle_inhibitor,
 #mpd,
-#custom-logo {
+#custom-logo,
+#custom-emailicon,
+#custom-unreademail {
   padding: 0.5rem 0.7rem;
   color: #ffffff;
   margin: 10px 0;
@@ -120,7 +122,8 @@ label:focus {
 }
 
 #backlight.value {
-  margin-right: 10px;
+  margin-right: 0;
+  min-width: 20px;
 }
 
 #network {
@@ -175,3 +178,14 @@ label:focus {
   font-size: 1.3em;
   color: #282a36;
 }
+
+#custom-emailicon {
+  background: #50fa7b;
+  color: #282a36;
+}
+
+#custom-unreademail {
+  background: #282a36;
+  min-width: 15px;
+}
+

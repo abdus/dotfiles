@@ -4,7 +4,7 @@
     //"height": 90, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/logo", "sway/mode", "pulseaudio#icon", "pulseaudio#sound", "backlight#icon", "backlight#value"],
+    "modules-left": ["custom/logo", "sway/mode", "pulseaudio#icon", "pulseaudio#sound", "backlight#icon", "backlight#value", "custom/emailicon", "custom/unreademail"],
     "modules-center": ["sway/workspaces"],
     "modules-right": ["network", "cpu", "battery", "battery#bat2", "clock", "tray"],
     "sway/mode": {
@@ -44,11 +44,13 @@
     "backlight#icon": {
         // "device": "acpi_video1",
         "format": "{icon}",
-        "format-icons": ["", ""]
+        "format-icons": ["", ""],
+        "on-click": "ctl-backlight.waybar.sh down"
     },
     "backlight#value": {
         // "device": "acpi_video1",
         "format": "{percent}",
+        "on-click": "ctl-backlight.waybar.sh up"
     },
     "battery": {
         "states": {
@@ -73,7 +75,9 @@
         "format-ethernet": "",
         "format-linked": "(No IP) ",
         "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 20,
+        "signal": 1
     },
     "pulseaudio#sound": {
         "format": "{volume}",
@@ -94,6 +98,7 @@
         "format-bluetooth-muted": " {icon}",
         "format-muted": "",
         "format-source-muted": "",
+        "on-click": "pactl set-sink-mute 0 toggle",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -116,7 +121,19 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
+
   "custom/logo": {
         "format": ""
-  }
+  },
+
+  "custom/emailicon": {
+      "format": ""
+  },
+
+  "custom/unreademail": {
+      "format": "{}",
+      "interval": 240,  // in every 4 mins
+      "exec": "cat /tmp/unread-email-count.txt || echo ErrNF",
+      "signal": 2
+  },
 }

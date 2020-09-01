@@ -6,3 +6,8 @@
 	gpgsign = true
 [core]
 	editor = nvim
+[sendemail]
+  smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = mail@abdus.xyz
+	smtpserverport = 587

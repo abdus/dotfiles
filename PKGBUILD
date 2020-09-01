@@ -31,4 +31,8 @@ depends=(
   'nodejs'
   'grim'
   'make'
+  'brightnessctl'
+  'shfmt'
+  'prettier'
+  'mako'
 )
