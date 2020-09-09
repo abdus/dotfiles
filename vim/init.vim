@@ -85,6 +85,7 @@ let g:gruvbox_invert_selection = 0
 colorscheme gruvbox                           " color theme
 let g:airline_theme = "gruvbox"               " airline theme
 
+
 let g:airline#extensions#tabline#enabled = 1      " enable upper tabline
 let g:airline#extensions#tabline#fnamemod = ':t'  " no idea what this does
 let g:airline_powerline_fonts = 1                 " use powerline fonts in airline
@@ -136,8 +137,8 @@ let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let wiki_default = {}
 let wiki_default.path = "~/vimwiki/"
-let wiki_default.syntax = "default"
-let wiki_default.ext = ".vimwiki"
+let wiki_default.syntax = "markdown"
+let wiki_default.ext = ".md"
 let wiki_default.path_html = "/tmp/vimwiki_html"
 
 let g:vimwiki_list = [wiki_default]
@@ -196,6 +197,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <C-CR> <CR><Esc>kA<CR>|    " indented newline on Ctrl + Enter
 inoremap ii <esc>|                  " use ii to exit modes
+inoremap <C-b> <esc>lce
 
 nnoremap
       \ <silent><expr> <Leader>H

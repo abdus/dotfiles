@@ -11,3 +11,8 @@
 	smtpserver = smtp.gmail.com
 	smtpuser = mail@abdus.xyz
 	smtpserverport = 587
+	annotate = yes
+[format]
+	signOff = yes
+[credential]
+	helper = cache --timeout 3600

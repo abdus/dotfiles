@@ -10,7 +10,7 @@ border-size=4
 border-radius=1
 default-timeout=5000
 icon-path=/usr/share/icons/Papirus/
-max-icon-size=32
+max-icon-size=40
 anchor=top-right
 progress-color=source #ff0000
 format=<span color="#50fa7b">%s</span>\n%b

@@ -4,7 +4,18 @@
     //"height": 90, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/logo", "sway/mode", "pulseaudio#icon", "pulseaudio#sound", "backlight#icon", "backlight#value", "custom/emailicon", "custom/unreademail"],
+    "modules-left": [
+        "custom/logo", 
+        "sway/mode", 
+        "pulseaudio#icon", 
+        "pulseaudio#sound", 
+        "backlight#icon", 
+        "backlight#value", 
+        "custom/emailicon", 
+        "custom/unreademail", 
+        "custom/icon-cube",
+        "custom/pacman-package-count"
+    ],
     "modules-center": ["sway/workspaces"],
     "modules-right": ["network", "cpu", "battery", "battery#bat2", "clock", "tray"],
     "sway/mode": {
@@ -132,8 +143,18 @@
 
   "custom/unreademail": {
       "format": "{}",
-      "interval": 240,  // in every 4 mins
       "exec": "cat /tmp/unread-email-count.txt || echo ErrNF",
-      "signal": 2
+      "signal": 2,
+      "interval": 10,
   },
+
+  "custom/icon-cube": {
+      "format": ""
+  },
+
+  "custom/pacman-package-count": {
+      "format": "{}",
+      "exec": "echo `pacman -Qe | wc -l`",
+      "interval": 3600
+  }
 }

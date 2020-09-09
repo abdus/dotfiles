@@ -181,9 +181,9 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 # draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
-
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # gruvbox - https://github.com/morhetz/gruvbox
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 colors:
   # Default colors
   primary:
@@ -213,6 +213,32 @@ colors:
     magenta: '#d3869b'
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# adopted from https://github.com/bluz71/vim-nightfly-guicolors
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#colors:
+  #primary:
+    #background: '#011627'
+    #foreground: '#C3CCDC'
+  #normal:
+    #black:   '#011627'
+    #red:     '#FC514E'
+    #green:   '#A1CD5E'
+    #yellow:  '#E3D18A'
+    #blue:    '#82AAFF'
+    #magenta: '#ef1334'
+    #cyan:    '#22f7f3'
+    #white:   '#C3CCDC'
+  #bright:
+    #black:   '#011627'
+    #red:     '#FF5874'
+    #green:   '#21C7A8'
+    #yellow:  '#ECC48D'
+    #blue:    '#AE81FF'
+    #magenta: '#d3869b'
+    #cyan:    '#8ec07c'
+    #white:   '#ebdbb2'
 
 
 draw_bold_text_with_bright_colors: true

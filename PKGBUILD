@@ -35,4 +35,7 @@ depends=(
   'shfmt'
   'prettier'
   'mako'
+  'ranger'
+  'feh'
+  'cronie'
 )

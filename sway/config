@@ -14,11 +14,13 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun -theme material -icon-theme "Papirus"
+#set $menu rofi -show drun -theme material -icon-theme "Papirus"
+
+set $menu dmenu_run -l 15 -nb "#282a36" -nf "#fff" -sb "#50fa7b" -sf "#282a36" -fn "IBM Plex Mono" -p "exec:"
 
 ### Output configuration
 #
@@ -145,7 +147,7 @@ input * {
     # apps
 
     # floating terminal
-    for_window [app_id="float"] floating enable, border pixel 0, sticky enable
+    for_window [app_id="float"] floating enable, border pixel 3, sticky enable
     bindsym $mod+Shift+Return exec $term --class launcher
 
     # Open Browser
@@ -160,7 +162,7 @@ input * {
     # Take screenshot
     bindsym Print exec grim "$HOME/Pictures/screenshots/$(date +%F\ %T).png"
 
-    # Take screenshot by selecting a region    
+    # Take screenshot by selecting a region
     bindsym Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +%F\ %T).png"
 
     # Open Discord
@@ -171,7 +173,7 @@ input * {
     # exec python ~/Desktop/window-opacity-control.py
 
     # sway-launcher
-    for_window [app_id="launcher"] floating enable, border pixel 0, sticky enable
+    for_window [app_id="launcher"] floating enable, border pixel 3, sticky enable
 
     # brightness ctl
     bindsym XF86MonBrightnessUp exec brightnessctl s +10%
@@ -281,7 +283,7 @@ gaps inner 2
 smart_gaps on
 
 # hide_edge_borders smart_no_gaps
-default_border pixel 10   # hide window titlebar
+default_border pixel 3
 
 # Window colors
 # class                     border      background  text        indicator   child_border
@@ -289,7 +291,7 @@ client.focused              #50fa7b     #ffffff20   #ffffff     #ffffff20   #50f
 # client.focused_inactive   #5c6370     #3b3228     #ffffff     #5c6370     #5c6370
 client.unfocused            #ffffff     #3b3228     #000000     #5c6370     #ffffff
 # client.urgent             #cb6077     #3b3228     #ffffff     #cb6077     #cb6077
-# client.placeholder        #000000     #3b3228     #ffffff     #000000     #0c0c0c	
+# client.placeholder        #000000     #3b3228     #ffffff     #000000     #0c0c0c
 # client.background 	      #fffffff    #ffffff
 
 include /etc/sway/config.d/*

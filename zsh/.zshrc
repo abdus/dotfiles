@@ -10,6 +10,9 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export EDITOR="nvim"
 
+# enable vi mode
+bindkey -v
+
 # Run neofetch on start-up
 clear && echo '' && echo '' && neofetch
 
@@ -47,6 +50,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 
 #====    ALIAS    ==============================================================
 alias vim="/usr/bin/nvim"
+alias mutt="neomutt"
 
 alias cd="cd $1"
 alias ..="cd ../"
@@ -69,6 +73,7 @@ alias roficonf="/usr/bin/nvim ~/.config/rofi/material.rasi"
 alias waybarconf="/usr/bin/nvim ~/.config/waybar/config"
 
 alias dotfiles="cd ~/Dev/dotfiles"
+
 
 #====    FUNCTIONS    ==========================================================
 function cd() {
