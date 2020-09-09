@@ -38,4 +38,8 @@ depends=(
   'ranger'
   'feh'
   'cronie'
+  'firefox-developer-edition'
+  'kitty'
+  'python-pillow'
+  'isync'
 )

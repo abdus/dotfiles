@@ -41,8 +41,11 @@ function update_eerything() {
   # rofi
   rsync --out-format="%n" -La ~/.config/rofi/* ./rofi/
 
-  # rofi
+  # mako
   rsync --out-format="%n" -La ~/.config/mako/* ./mako/
+
+  # kitty
+  rsync --out-format="%n" -La ~/.config/kitty/* ./kitty/
 
 }
 
