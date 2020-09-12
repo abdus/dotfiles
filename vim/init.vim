@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plug')
 Plug 'abdus/palenight.vim'                        " color theme
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
 Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
@@ -81,9 +82,19 @@ endif
 "let g:palenight_terminal_italics=1
 "let g:airline_theme = "palenight"             " airline theme
 
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox                           " color theme
-let g:airline_theme = "gruvbox"               " airline theme
+"let g:gruvbox_invert_selection = 0
+"colorscheme gruvbox                           " color theme
+"let g:airline_theme = "gruvbox"               " airline theme
+
+let ayucolor="mirage"
+colorscheme ayu
+let g:airline_theme = "ayu"
+
+" indent line 
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
 
 
 let g:airline#extensions#tabline#enabled = 1      " enable upper tabline

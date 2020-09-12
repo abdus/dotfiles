@@ -57,8 +57,6 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias 3.="cd ../../../"
 
-alias feh="feh -S filename --borderless"
-
 alias ga="git add"
 alias gaa="git add ."
 alias gc="git commit -m"
@@ -74,10 +72,14 @@ alias waybarconf="/usr/bin/nvim ~/.config/waybar/config"
 
 alias dotfiles="cd ~/Dev/dotfiles"
 
+alias icat="kitty +kitten icat"
+alias feh="feh -S filename --borderless"
+alias wfrecord="/usr/bin/wf-recorder"
+
 
 #====    FUNCTIONS    ==========================================================
 function cd() {
-  builtin cd "$@" && tree -L 2 --noreport;
+  builtin cd "$@" && tree -L 2 --noreport -I node_modules;
 }
 
 function haste() {

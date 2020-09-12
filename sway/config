@@ -25,7 +25,7 @@ set $menu dmenu_run -l 15 -nb "#282a36" -nf "#fff" -sb "#50fa7b" -sf "#282a36" -
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background $HOME/Pictures/wallpaper/15.jpg fill
+output * background $HOME/Pictures/wallpaper/16.jpg fill
 #
 # Example configuration:
 #
