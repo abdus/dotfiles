@@ -22,15 +22,18 @@ set lbr wrap nolist         " breaks line whenever needed/on resize
 set cursorline              " highlight cursorline
 set splitbelow splitright   " new windows below and right of the current one
 
+au BufRead,BufNewFile *.md set textwidth=80   " wrap lines exceeding 80 chars
+
 let g:mapleader = ','       " keybinding leader
 
 
 call plug#begin('~/.config/nvim/plug')
 
-Plug 'abdus/palenight.vim'                        " color theme
+"Plug 'abdus/palenight.vim'                        " color theme
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
@@ -90,7 +93,7 @@ let ayucolor="mirage"
 colorscheme ayu
 let g:airline_theme = "ayu"
 
-" indent line 
+" indent line
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
@@ -189,6 +192,43 @@ if has('persistent_undo')
 endif
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- Autosave Sessions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" create a session based on currently opened directory and save it on vim exit
+fu! SessionSave()
+  if filewritable(expand('~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'))
+    execute 'mksession! ~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  endif
+endfunction
+
+fu! SessionCreate()
+  if !isdirectory(expand("~/.vim/sessions"))
+    execute "call mkdir(expand('~/.vim/sessions', 'p'))"
+  endif
+  execute 'mksession ~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+endfunction
+
+fu! SessionRestore()
+  let l:session_file = '~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  if filereadable(expand(session_file))
+    echo session_file
+    execute 'source ~/.vim/sessions/' .  split(getcwd(), '/')[-1] . '.vim'
+
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(l) == -1
+          exec 'sbuffer ' . l
+        endif
+      endfor
+    endif
+  endif
+endfunction
+
+autocmd VimLeave * call SessionSave()
+autocmd VimEnter * nested call SessionRestore()
+command SessCreate call SessionCreate()
+set sessionoptions-=options " dont save options
 
 
 

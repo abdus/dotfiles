@@ -7,20 +7,21 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $mod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu rofi -show drun -theme material -icon-theme "Papirus"
+set $rofi rofi -combi-modi window,drun,ssh,run -theme material -icon-theme "Papirus" -show combi
+set $dmenu dmenu_run -l 15 -nb "#282a36" -nf "#fff" -sb "#50fa7b" -sf "#282a36" -fn "IBM Plex Mono" -p "exec:"
 
-set $menu dmenu_run -l 15 -nb "#282a36" -nf "#fff" -sb "#50fa7b" -sf "#282a36" -fn "IBM Plex Mono" -p "exec:"
+set $menu $dmenu
 
 ### Output configuration
 #
@@ -75,6 +76,7 @@ input * {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $rofi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -179,6 +181,9 @@ input * {
     bindsym XF86MonBrightnessUp exec brightnessctl s +10%
     bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
     bindsym XF86ScreenSaver exec brightnessctl s 0%
+
+    # lock screen
+    bindsym $mod+x exec lock-screen.sh
 
 #
 # Layout stuff:

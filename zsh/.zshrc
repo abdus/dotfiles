@@ -71,10 +71,13 @@ alias roficonf="/usr/bin/nvim ~/.config/rofi/material.rasi"
 alias waybarconf="/usr/bin/nvim ~/.config/waybar/config"
 
 alias dotfiles="cd ~/Dev/dotfiles"
+alias startjsinfo="cd /home/crow/Dev/personal/javascript.info/server && sudo PORT=80 ./edit en"
 
 alias icat="kitty +kitten icat"
 alias feh="feh -S filename --borderless"
 alias wfrecord="/usr/bin/wf-recorder"
+alias swaylock="swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 20 --effect-blur 10x5 --effect-vignette 0.5:0.5 --ring-color 50fa7b --key-hl-color 880033 --line-color 00000000 --inside-color 50fa7b88 --separator-color ff000000 --grace 2 --fade-in 0.5"
+alias killwaybar="kill -9 `pidof waybar`"
 
 
 #====    FUNCTIONS    ==========================================================

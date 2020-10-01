@@ -182,37 +182,68 @@ font:
 # draw_bold_text_with_bright_colors: true
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# gruvbox - https://github.com/morhetz/gruvbox
+# ayu dark
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
-    background: '#282828'
-    # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
+    background: '#1F2430'
+    foreground: '#CBCCC6'
 
   # Normal colors
   normal:
-    black:   '#282828'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
+    black: '#1F2430'
+    red: '#FF3333'
+    green: '#BAE67E'
+    yellow: '#FFA759'
+    blue: '#73D0FF'
+    magenta: '#F28779'
+    cyan: '#39BAE6'
+    white: '#FFFFFF'
 
   # Bright colors
   bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
+    black: '0x686868'
+    red: '#F51818'
+    green: '#A6CC70'
+    yellow: '0xFFB454'
+    blue: '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# gruvbox - https://github.com/morhetz/gruvbox
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#colors:
+  ## Default colors
+  #primary:
+    ## hard contrast: background = '#1d2021'
+    #background: '#282828'
+    ## soft contrast: background = '#32302f'
+    #foreground: '#ebdbb2'
+
+  ## Normal colors
+  #normal:
+    #black:   '#282828'
+    #red:     '#cc241d'
+    #green:   '#98971a'
+    #yellow:  '#d79921'
+    #blue:    '#458588'
+    #magenta: '#b16286'
+    #cyan:    '#689d6a'
+    #white:   '#a89984'
+
+  ## Bright colors
+  #bright:
+    #black:   '#928374'
+    #red:     '#fb4934'
+    #green:   '#b8bb26'
+    #yellow:  '#fabd2f'
+    #blue:    '#83a598'
+    #magenta: '#d3869b'
+    #cyan:    '#8ec07c'
+    #white:   '#ebdbb2'
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # adopted from https://github.com/bluz71/vim-nightfly-guicolors
@@ -272,7 +303,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 1
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
