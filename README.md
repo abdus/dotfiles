@@ -44,6 +44,6 @@ through which I keep cycling. Following are a few of them:
 - **Zsh**: flazz, agnoster
 
 <p align="center">
-  <img src="https://i.imgur.com/ux1gDBv.png" alt="" />
-  <div>NeoVim with Gruvbox theme. status bar is Waybar</div>
+  <img src="https://i.imgur.com/zy7vRub.png" alt="" />
+  <div>NeoVim with Ayu theme. status bar is Waybar</div>
 </p>
