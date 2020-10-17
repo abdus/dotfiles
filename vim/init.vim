@@ -29,7 +29,7 @@ let g:mapleader = ','       " keybinding leader
 
 call plug#begin('~/.config/nvim/plug')
 
-"Plug 'abdus/palenight.vim'                        " color theme
+"Plug 'abdus/palenight.vim'                        " color therr
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
 "Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'

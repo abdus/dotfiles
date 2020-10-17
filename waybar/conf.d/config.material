@@ -5,14 +5,14 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
-        "custom/logo", 
-        "sway/mode", 
-        "pulseaudio#icon", 
-        "pulseaudio#sound", 
-        "backlight#icon", 
-        "backlight#value", 
-        "custom/emailicon", 
-        "custom/unreademail", 
+        "custom/logo",
+        "sway/mode",
+        "pulseaudio#icon",
+        "pulseaudio#sound",
+        "backlight#icon",
+        "backlight#value",
+        "custom/emailicon",
+        "custom/unreademail",
         "custom/icon-cube",
         "custom/pacman-package-count"
     ],
