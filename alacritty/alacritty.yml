@@ -3,14 +3,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
 # TERM variable
 #
 # This value is used to set the `$TERM` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
 # check the local terminfo database and use `alacritty` if it is
 # available, otherwise `xterm-256color` is used.
-#TERM: xterm-256color
+  TERM: xterm-256color
 
 window:
 # Window dimensions (changes require restart)
@@ -49,7 +49,7 @@ window:
 # Values for `decorations` (macOS only):
 #     - transparent: Title bar, transparent background and title bar buttons
 #     - buttonless: Title bar, transparent background, but no title bar buttons
-decorations: full
+decorations: none
 
 # Startup Mode (changes require restart)
 #
@@ -103,7 +103,7 @@ gtk_theme_variant: dark
 font:
   # Normal (roman) font face
   normal:
-    family: "Iosevka Nerd Font"
+    family: "space mono"
     # Font family
     #
     # Default:
@@ -305,8 +305,8 @@ draw_bold_text_with_bright_colors: true
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1
 
-#selection:
-#semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
 # When set to `true`, selected text will be copied to the primary clipboard.
 #save_to_clipboard: false
@@ -314,14 +314,14 @@ background_opacity: 1
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
 
-#cursor:
+cursor:
 # Cursor style
 #
 # Values for `style`:
 #   - ▇ Block
 #   - _ Underline
 #   - | Beam
-#style: Block
+  style: Beam
 
 # If this is `true`, the cursor will be rendered as a hollow box when the
 # window is not focused.
