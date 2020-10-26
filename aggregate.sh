@@ -7,7 +7,7 @@
 
 COMMAND=$1
 
-function update_eerything() {
+function update_everything() {
   # alacritty
   rsync --out-format="%n" -La ~/.config/alacritty/* ./alacritty/
 
@@ -53,7 +53,7 @@ if [[ $COMMAND == "clean" ]]; then
   echo "Cleaing Workspace"
   find . -type d -not -path "./.git/*" -not -name ".git" -exec rm -vrf {} +
 elif [[ $COMMAND == "update" ]]; then
-  update_eerything
+  update_everything
 
   if [[ ! -d ".git" ]]; then
     git init

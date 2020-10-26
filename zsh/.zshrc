@@ -79,9 +79,6 @@ alias swaylock="swaylock --screenshots --clock --indicator --indicator-radius 10
 
 
 #====    FUNCTIONS    ==========================================================
-function cd() {
-  builtin cd "$@" && tree -L 2 --noreport -I node_modules;
-}
 
 function haste() {
   curl -XPOST 'https://hastebin.com/documents' --data-binary @-

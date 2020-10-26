@@ -303,7 +303,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1
+background_opacity: 0.9
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -325,7 +325,7 @@ cursor:
 
 # If this is `true`, the cursor will be rendered as a hollow box when the
 # window is not focused.
-#unfocused_hollow: true
+  unfocused_hollow: false
 
 # Live config reload (changes require restart)
 #live_config_reload: true
@@ -387,7 +387,7 @@ cursor:
 # Record all characters and escape sequences as test data.
 #ref_test: false
 
-#mouse:
+mouse:
 # Click settings
 #
 # The `double_click` and `triple_click` settings control the time
@@ -397,7 +397,7 @@ cursor:
 #triple_click: { threshold: 300 }
 
 # If this is `true`, the cursor is temporarily hidden when typing.
-#hide_when_typing: false
+  hide_when_typing: true
 
 #url:
 # URL launcher
