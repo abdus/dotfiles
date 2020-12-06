@@ -1,15 +1,15 @@
 [user]
-	email = mail@abdus.xyz
+	email = abdus@abdus.net
 	name = Abdus
-	signingkey = 0C9A4E9267C5385FCB99C8FFEB3966E37BA3DFD8
+	signingkey = 105C3F70ED4A0F788D741A25ADC4E3A6FEBBB900
 [commit]
 	gpgsign = true
 [core]
 	editor = nvim
 [sendemail]
   smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpuser = mail@abdus.xyz
+	smtpserver = smtp.porkbun.net
+	smtpuser = abdus@abdus.net
 	smtpserverport = 587
 	annotate = yes
 [format]

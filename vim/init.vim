@@ -34,6 +34,7 @@ Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
 "Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
+Plug 'jbgutierrez/vim-better-comments'            " highlight comments with diff colors
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
@@ -44,6 +45,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}   " Language Server
 Plug 'mattn/emmet-vim'                            " Emmet for Vim
 Plug 'sheerun/vim-polyglot'                       " language pack
 Plug 'dense-analysis/ale'                         " async lint engine
+Plug 'editorconfig/editorconfig-vim'              " editorconfig support for vim
 
 Plug 'airblade/vim-gitgutter'                     " git events visualised
 Plug 'tpope/vim-fugitive'                         " Git Wrapper
@@ -118,7 +120,7 @@ let g:rustfmt_autosave = 1                    " rust format on save
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >- polyglot.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:polyglot_disabled = ['']                " disable languages
+"let g:polyglot_disabled = ['']                " disable languages
 
 
 
@@ -139,11 +141,12 @@ let g:ale_fixers.html = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
-let g:ale_fixers.javascriptreact = ['prettier']
+let g:ale_fixers.javascriptreact = ['prettier', 'eslint']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 
+"let g:ale_linters_ignore = {'javascript': ['eslint']}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -225,6 +228,7 @@ fu! SessionRestore()
   endif
 endfunction
 
+autocmd VimLeave * :tabdo NERDTreeClose        " just close that damn thing
 autocmd VimLeave * call SessionSave()
 autocmd VimEnter * nested call SessionRestore()
 command SessCreate call SessionCreate()
