@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/1pMEstg.png" alt=".files" />
+  <img src="./dotfiles.png" alt=".files" />
 </p>
 
 <p align="center">
