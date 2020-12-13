@@ -26,8 +26,3 @@ through which I keep cycling. Following are a few of them:
 - **Vim/Neovim**: Gruvbox(using now), Palenight, OceanicNext
 - **Alacritty**: Palenight, Purify
 - **Zsh**: flazz, agnoster
-
-<p align="center">
-  <img src="./editor.png" alt="" />
-  <div>NeoVim with Ayu theme. status bar is Waybar</div>
-</p>

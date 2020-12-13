@@ -1,3 +1,9 @@
+" File              : init.vim
+" Author            : Abdus S. Azad <abdus@abdus.net>
+" Date              : 20 January, 2021 18:23
+" Last Modified Date: 20 January, 2021 22:05
+" Last Modified By  : Abdus S. Azad <abdus@abdus.net>
+
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching brackets.
 set ignorecase              " case insensitive matching
@@ -15,7 +21,6 @@ set relativenumber          " set relative line numbers. easier navigation
                             " using navigation keys
 set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
-filetype plugin indent on   " allows auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set background=dark         " dark background
 set lbr wrap nolist         " breaks line whenever needed/on resize
@@ -29,14 +34,13 @@ let g:mapleader = ','       " keybinding leader
 
 call plug#begin('~/.config/nvim/plug')
 
-"Plug 'abdus/palenight.vim'                        " color therr
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
-"Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'                   " nord
 Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
+Plug 'alpertuna/vim-header'                       " file header generator
 Plug 'voldikss/vim-floaterm'                      " floating terminal
 Plug 'ryanoasis/vim-devicons'                     " add filetype icons
 
@@ -79,20 +83,16 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-"colorscheme nord                             " color theme
-"let g:airline_theme = "nord"                 " airline theme
-
 "colorscheme palenight                         " color theme
 "let g:palenight_terminal_italics=1
 "let g:airline_theme = "palenight"             " airline theme
 
-"let g:gruvbox_invert_selection = 0
-"colorscheme gruvbox                           " color theme
-"let g:airline_theme = "gruvbox"               " airline theme
+"let ayucolor="mirage" " dark
+"colorscheme ayu
+"let g:airline_theme = "ayu"
 
-let ayucolor="dark" " mirage
-colorscheme ayu
-let g:airline_theme = "ayu"
+colorscheme nord
+let g:airline_theme = "nord"
 
 " indent line
 let g:indentLine_char = ''
@@ -139,9 +139,11 @@ let g:ale_fixers = {}
 let g:ale_fixers.html = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
+let g:ale_fixers.json = ['prettier']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
 let g:ale_fixers.javascriptreact = ['prettier', 'eslint']
 let g:ale_fixers.typescript = ['prettier', 'eslint']
+let g:ale_fixers.typescriptreact = ['prettier', 'eslint']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
@@ -200,23 +202,23 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " create a session based on currently opened directory and save it on vim exit
 fu! SessionSave()
-  if filewritable(expand('~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'))
-    execute 'mksession! ~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  if filewritable(expand('.vim-session.vim'))
+    execute 'mksession! .vim-session.vim'
   endif
 endfunction
 
 fu! SessionCreate()
-  if !isdirectory(expand("~/.vim/sessions"))
-    execute "call mkdir(expand('~/.vim/sessions', 'p'))"
-  endif
-  execute 'mksession ~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  "if !isdirectory(expand("~/.vim/sessions"))
+    "execute "call mkdir(expand('~/.vim/sessions', 'p'))"
+  "endif
+  execute 'mksession .vim-session.vim'
 endfunction
 
 fu! SessionRestore()
-  let l:session_file = '~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  let l:session_file = '.vim-session.vim'
   if filereadable(expand(session_file))
     echo session_file
-    execute 'source ~/.vim/sessions/' .  split(getcwd(), '/')[-1] . '.vim'
+    execute 'source .vim-session.vim'
 
     if bufexists(1)
       for l in range(1, bufnr('$'))
@@ -233,6 +235,17 @@ autocmd VimLeave * call SessionSave()
 autocmd VimEnter * nested call SessionRestore()
 command SessCreate call SessionCreate()
 set sessionoptions-=options " dont save options
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- vim-header
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:header_field_author = 'Abdus S. Azad'
+let g:header_field_author_email = 'abdus@abdus.net'
+let g:header_auto_add_header = 0 " stop auto-inserting header
+let g:header_max_size = 20
+let g:header_field_timestamp_format = '%d %B, %Y %H:%M'
+
 
 
 

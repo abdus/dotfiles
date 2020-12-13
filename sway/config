@@ -26,7 +26,7 @@ set $menu $dmenu
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background $HOME/Pictures/wallpaper/25.jpg fill
+output * background $HOME/Pictures/wallpaper/29.jpg fill
 #
 # Example configuration:
 #
@@ -38,11 +38,11 @@ output * background $HOME/Pictures/wallpaper/25.jpg fill
 #
 # Example configuration:
 #
-exec swayidle -w \
-      timeout 300 'swaylock -f -c 000000' \
-      timeout 600 'swaymsg "output * dpms off"' \
-           resume 'swaymsg "output * dpms on"' \
-      before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+      #timeout 300 'swaylock -f -c 000000' \
+      #timeout 600 'swaymsg "output * dpms off"' \
+           #resume 'swaymsg "output * dpms on"' \
+      #before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -283,8 +283,9 @@ exec waybar
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'AD-Strawberry'
-    gsettings set $gnome-schema icon-theme 'AD-Strawberry-Suru'
+    gsettings set $gnome-schema gtk-theme 'Nordic-darker'
+    gsettings set $gnome-schema icon-theme 'Nordic-Darker'
+    gsettings set $gnome-schema font-name 'IBM Plex Sans'
     # gsettings set $gnome-schema cursor-theme 'Enter Cursor Theme'
 }
 
@@ -299,9 +300,9 @@ default_border pixel 3
 
 # Window colors
 # class                     border      background  text        indicator   child_border
-client.focused              #50fa7b     #ffffff20   #ffffff     #ffffff20   #50fa7b
+client.focused              #D8DEE9     #D8DEE9     #2E3440     #ffffff     #D8DEE9
 # client.focused_inactive   #5c6370     #3b3228     #ffffff     #5c6370     #5c6370
-client.unfocused            #ffffff     #3b3228     #000000     #5c6370     #ffffff
+client.unfocused            #2E3440     #2E3440     #D8DEE9     #5c6370     #2E3440
 # client.urgent             #cb6077     #3b3228     #ffffff     #cb6077     #cb6077
 # client.placeholder        #000000     #3b3228     #ffffff     #000000     #0c0c0c
 # client.background 	      #fffffff    #ffffff

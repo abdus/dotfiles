@@ -24,7 +24,7 @@ window#waybar.hidden {
 #workspaces button {
   padding: 0.5rem 0.9rem;
   margin: 0px 0;
-  background: #282a36;
+  background: #2E3440;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -35,8 +35,8 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-  background: #50fa7b;
-  color: #282a36;
+  background: #D8DEE9;
+  color: #2E3440;
 }
 
 #workspaces button.urgent {
@@ -70,11 +70,11 @@ window#waybar.hidden {
   padding: 0.5rem 0.9rem;
   color: #ffffff;
   margin: 0px 0;
-  background: #282a36;
+  background: #2E3440;
 }
 
 #clock {
-  background-color: #50fa7b;
+  background-color: #D8DEE9;
   color: #282a36;
 }
 
@@ -90,7 +90,7 @@ window#waybar.hidden {
 @keyframes blink {
   to {
     background-color: #ffffff;
-    color: #000000;
+    color: #2E3440;
   }
 }
 
@@ -105,7 +105,7 @@ window#waybar.hidden {
 }
 
 label:focus {
-  background-color: #000000;
+  background-color: #2E3440;
 }
 
 #cpu {
@@ -118,8 +118,8 @@ label:focus {
 }
 
 #backlight.icon {
-  background: #50fa7b;
-  color: #282a36;
+  background: #D8DEE9;
+  color: #2E3440;
 }
 
 #backlight.value {
@@ -127,7 +127,7 @@ label:focus {
 }
 
 #network {
-  color: #50fa7b;
+  color: #D8DEE9;
 }
 
 #network.disconnected {
@@ -135,8 +135,8 @@ label:focus {
 }
 
 #pulseaudio.icon {
-  background: #50fa7b;
-  color: #000;
+  background: #D8DEE9;
+  color: #2E3440;
 }
 
 #pulseaudio.muted.icon {
@@ -179,7 +179,7 @@ label:focus {
 
 #custom-emailicon,
 #custom-icon-cube {
-  background: #50fa7b;
+  background: #D8DEE9;
   color: #282a36;
 }
 
