@@ -23,7 +23,7 @@ window#waybar.hidden {
 
 #workspaces button {
   padding: 0.5rem 0.7rem;
-  margin: 10px 0;
+  margin: 0px 0;
   background: #282a36;
 }
 
@@ -65,14 +65,14 @@ window#waybar.hidden {
 #custom-linuxlogo {
   padding: 0.5rem 0.7rem;
   color: #ffffff;
-  margin: 10px 0;
+  margin: 0px 0;
   background: #282a36;
 }
 
 #clock {
   background-color: #50fa7b;
   color: #282a36;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 #battery {
@@ -120,7 +120,7 @@ label:focus {
 }
 
 #backlight.value {
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 #network {
@@ -134,7 +134,7 @@ label:focus {
 #pulseaudio.icon {
   background: #50fa7b;
   color: #000;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 #pulseaudio.muted.icon {

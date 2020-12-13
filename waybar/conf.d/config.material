@@ -134,19 +134,19 @@
   },
 
   "custom/logo": {
-        "format": ""
+        "format": ""
   },
 
-  "custom/emailicon": {
-      "format": ""
-  },
+ // "custom/emailicon": {
+ //     "format": ""
+ // },
 
-  "custom/unreademail": {
-      "format": "{}",
-      "exec": "cat /tmp/unread-email-count.txt || echo ErrNF",
-      "signal": 2,
-      "interval": 10,
-  },
+ // "custom/unreademail": {
+ //     "format": "{}",
+ //     "exec": "cat /tmp/unread-email-count.txt || echo ErrNF",
+ //     "signal": 2,
+ //     "interval": 10,
+ // },
 
   "custom/icon-cube": {
       "format": ""

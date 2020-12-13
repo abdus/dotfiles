@@ -38,11 +38,11 @@ output * background $HOME/Pictures/wallpaper/25.jpg fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+      timeout 300 'swaylock -f -c 000000' \
+      timeout 600 'swaymsg "output * dpms off"' \
+           resume 'swaymsg "output * dpms on"' \
+      before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -63,6 +63,8 @@ input * {
 
 input "type:keyboard" {
     xkb_options caps:escape
+    #repeat_rate 10
+    repeat_delay 150
 }
 
 #

@@ -34,7 +34,6 @@ Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
 "Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
-Plug 'jbgutierrez/vim-better-comments'            " highlight comments with diff colors
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
@@ -91,7 +90,7 @@ endif
 "colorscheme gruvbox                           " color theme
 "let g:airline_theme = "gruvbox"               " airline theme
 
-let ayucolor="mirage"
+let ayucolor="dark" " mirage
 colorscheme ayu
 let g:airline_theme = "ayu"
 
@@ -142,6 +141,7 @@ let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
 let g:ale_fixers.javascriptreact = ['prettier', 'eslint']
+let g:ale_fixers.typescript = ['prettier', 'eslint']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
@@ -322,14 +322,24 @@ nnoremap <S-s> <esc>:w<CR>|     " quick save
 " >- NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-n> :NERDTreeToggle<CR>|    " Opens up NerdTree
+map <C-m> :NERDTreeMirror<CR>|    " mirror available nerdtree instance
 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- FZF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <space>F :FZF<CR>|             " open fuzzy search
 nnoremap <space>f :Filetypes<CR>|       " open filetype window
 nnoremap <space><space> :Buffers<CR>|   " open fuzzy search
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- coc.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"typescript.validate.enable": false,
+"javascript.validate.enable": false,
 
 
 

@@ -22,14 +22,18 @@ set lbr wrap nolist         " breaks line whenever needed/on resize
 set cursorline              " highlight cursorline
 set splitbelow splitright   " new windows below and right of the current one
 
+au BufRead,BufNewFile *.md set textwidth=80   " wrap lines exceeding 80 chars
+
 let g:mapleader = ','       " keybinding leader
 
 
 call plug#begin('~/.config/nvim/plug')
 
-Plug 'abdus/palenight.vim'                        " color theme
+"Plug 'abdus/palenight.vim'                        " color therr
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
@@ -40,6 +44,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}   " Language Server
 Plug 'mattn/emmet-vim'                            " Emmet for Vim
 Plug 'sheerun/vim-polyglot'                       " language pack
 Plug 'dense-analysis/ale'                         " async lint engine
+Plug 'editorconfig/editorconfig-vim'              " editorconfig support for vim
 
 Plug 'airblade/vim-gitgutter'                     " git events visualised
 Plug 'tpope/vim-fugitive'                         " Git Wrapper
@@ -81,9 +86,20 @@ endif
 "let g:palenight_terminal_italics=1
 "let g:airline_theme = "palenight"             " airline theme
 
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox                           " color theme
-let g:airline_theme = "gruvbox"               " airline theme
+"let g:gruvbox_invert_selection = 0
+"colorscheme gruvbox                           " color theme
+"let g:airline_theme = "gruvbox"               " airline theme
+
+let ayucolor="dark" " mirage
+colorscheme ayu
+let g:airline_theme = "ayu"
+
+" indent line
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+
 
 let g:airline#extensions#tabline#enabled = 1      " enable upper tabline
 let g:airline#extensions#tabline#fnamemod = ':t'  " no idea what this does
@@ -103,7 +119,7 @@ let g:rustfmt_autosave = 1                    " rust format on save
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >- polyglot.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:polyglot_disabled = ['']                " disable languages
+"let g:polyglot_disabled = ['']                " disable languages
 
 
 
@@ -124,9 +140,13 @@ let g:ale_fixers.html = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
+let g:ale_fixers.javascriptreact = ['prettier', 'eslint']
+let g:ale_fixers.typescript = ['prettier', 'eslint']
 let g:ale_fixers.rust = ['rustfmt']
+let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 
+"let g:ale_linters_ignore = {'javascript': ['eslint']}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,8 +154,8 @@ let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let wiki_default = {}
 let wiki_default.path = "~/vimwiki/"
-let wiki_default.syntax = "default"
-let wiki_default.ext = ".vimwiki"
+let wiki_default.syntax = "markdown"
+let wiki_default.ext = ".md"
 let wiki_default.path_html = "/tmp/vimwiki_html"
 
 let g:vimwiki_list = [wiki_default]
@@ -175,6 +195,44 @@ if has('persistent_undo')
 endif
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- Autosave Sessions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" create a session based on currently opened directory and save it on vim exit
+fu! SessionSave()
+  if filewritable(expand('~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'))
+    execute 'mksession! ~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  endif
+endfunction
+
+fu! SessionCreate()
+  if !isdirectory(expand("~/.vim/sessions"))
+    execute "call mkdir(expand('~/.vim/sessions', 'p'))"
+  endif
+  execute 'mksession ~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+endfunction
+
+fu! SessionRestore()
+  let l:session_file = '~/.vim/sessions/' . split(getcwd(), '/')[-1] . '.vim'
+  if filereadable(expand(session_file))
+    echo session_file
+    execute 'source ~/.vim/sessions/' .  split(getcwd(), '/')[-1] . '.vim'
+
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(l) == -1
+          exec 'sbuffer ' . l
+        endif
+      endfor
+    endif
+  endif
+endfunction
+
+autocmd VimLeave * :tabdo NERDTreeClose        " just close that damn thing
+autocmd VimLeave * call SessionSave()
+autocmd VimEnter * nested call SessionRestore()
+command SessCreate call SessionCreate()
+set sessionoptions-=options " dont save options
 
 
 
@@ -194,6 +252,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <C-CR> <CR><Esc>kA<CR>|    " indented newline on Ctrl + Enter
 inoremap ii <esc>|                  " use ii to exit modes
+inoremap <C-b> <esc>lce
 
 nnoremap
       \ <silent><expr> <Leader>H
@@ -263,13 +322,24 @@ nnoremap <S-s> <esc>:w<CR>|     " quick save
 " >- NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-n> :NERDTreeToggle<CR>|    " Opens up NerdTree
+map <C-m> :NERDTreeMirror<CR>|    " mirror available nerdtree instance
 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- FZF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <space><space> :FZF<CR>|       " open fuzzy search
+nnoremap <space>F :FZF<CR>|             " open fuzzy search
 nnoremap <space>f :Filetypes<CR>|       " open filetype window
+nnoremap <space><space> :Buffers<CR>|   " open fuzzy search
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- coc.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"typescript.validate.enable": false,
+"javascript.validate.enable": false,
 
 
 
