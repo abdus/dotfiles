@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.npm-bin/bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/go/bin:$HOME/Desktop/scripts:$HOME/.gem/ruby/2.7.0/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.deno/bin:~/scripts:$PATH
 
+# env vars
+export XDG_CURRENT_DESKTOP=sway
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="flazz"

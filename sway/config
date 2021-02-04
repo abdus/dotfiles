@@ -305,6 +305,12 @@ client.focused              #D8DEE9     #D8DEE9     #2E3440     #ffffff     #D8D
 client.unfocused            #2E3440     #2E3440     #D8DEE9     #5c6370     #2E3440
 # client.urgent             #cb6077     #3b3228     #ffffff     #cb6077     #cb6077
 # client.placeholder        #000000     #3b3228     #ffffff     #000000     #0c0c0c
-# client.background 	      #fffffff    #ffffff
+# client.background 	      #fffffff    #ffffffa
+
+
+######################################
+#          START SOME MUSIC          #
+######################################
+exec_always mpv 'https://www.youtube.com/watch?v=wkfyu9Sxr8g'
 
 include /etc/sway/config.d/*
