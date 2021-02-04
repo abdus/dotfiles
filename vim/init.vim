@@ -1,7 +1,7 @@
 " File              : init.vim
 " Author            : Abdus S. Azad <abdus@abdus.net>
 " Date              : 20 January, 2021 18:23
-" Last Modified Date: 20 January, 2021 22:05
+" Last Modified Date: 05 February, 2021 00:05
 " Last Modified By  : Abdus S. Azad <abdus@abdus.net>
 
 set nocompatible            " disable compatibility to old-time vi
