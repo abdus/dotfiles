@@ -34,8 +34,8 @@ window:
 # Blank space added around the window in pixels. This padding is scaled
 # by DPI and the specified value is always added at both opposing sides.
   padding:
-   x: 5
-   y: 5
+   x: 2
+   y: 2
 
 # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -103,7 +103,7 @@ gtk_theme_variant: dark
 font:
   # Normal (roman) font face
   normal:
-    family: "Operator Mono Book"
+    family: 'Iosevka Nerd Font' # "Operator Mono Book"
     # Font family
     #
     # Default:

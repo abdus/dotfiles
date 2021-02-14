@@ -2,9 +2,9 @@ max-visible=5
 layer=overlay
 font=IBM Plex Sans 12
 height=500
-text-color=#ffffff
+text-color=#ECEFF4
 background-color=#282a36
-border-color=#50fa7b40
+border-color=#ECEFF4
 padding=8,8,8,8
 border-size=4
 border-radius=1
@@ -13,4 +13,4 @@ icon-path=/usr/share/icons/Papirus/
 max-icon-size=40
 anchor=top-right
 progress-color=source #ff0000
-format=<span color="#50fa7b">%s</span>\n%b
+format=<span color="#ECEFF4">%s</span>\n%b

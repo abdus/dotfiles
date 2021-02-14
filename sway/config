@@ -309,8 +309,9 @@ client.unfocused            #2E3440     #2E3440     #D8DEE9     #5c6370     #2E3
 
 
 ######################################
-#          START SOME MUSIC          #
+#          START SOME APPS           #
 ######################################
-exec_always mpv 'https://www.youtube.com/watch?v=wkfyu9Sxr8g'
+# exec_always mpv 'https://www.youtube.com/watch?v=wkfyu9Sxr8g'   # play music
+exec_always newsboat -x reload                                  # get feed articles
 
 include /etc/sway/config.d/*

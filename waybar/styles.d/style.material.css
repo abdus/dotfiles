@@ -1,20 +1,20 @@
 * {
+  min-height: 0;
+  font-size: 14px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Font Awesome 5 Free", "Iosevka", Roboto, Helvetica, Arial,
+    sans-serif;
   border: none;
   border-radius: 0;
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "IBM Plex Mono", "Font Awesome 5 Free", Roboto, Helvetica, Arial,
-    sans-serif;
-  font-size: 13px;
-  min-height: 0;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 window#waybar {
+  color: #ffffff;
   background-color: transparent;
   border-bottom: none;
-  color: #ffffff;
-  transition-property: background-color;
   transition-duration: 0.5s;
+  transition-property: background-color;
 }
 
 window#waybar.hidden {
@@ -22,21 +22,21 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  padding: 0.5rem 0.9rem;
   margin: 0px 0;
-  background: #2E3440;
+  padding: 0.5rem 0.9rem;
+  background: #2e3440;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-  background: rgba(0, 1, 51, 0.6);
   color: #ffffff;
+  background: rgba(0, 1, 51, 0.6);
   box-shadow: inherit;
 }
 
 #workspaces button.focused {
-  background: #D8DEE9;
-  color: #2E3440;
+  color: #2e3440;
+  background: #d8dee9;
 }
 
 #workspaces button.urgent {
@@ -44,8 +44,8 @@ window#waybar.hidden {
 }
 
 #mode {
-  background-color: #000133;
   color: #ffa000;
+  background-color: #000133;
   /* border-bottom: 3px solid #ffffff; */
 }
 
@@ -67,15 +67,15 @@ window#waybar.hidden {
 #custom-unreademail,
 #custom-pacman-package-count,
 #custom-icon-cube {
-  padding: 0.5rem 0.9rem;
-  color: #ffffff;
   margin: 0px 0;
-  background: #2E3440;
+  padding: 0.5rem 0.9rem;
+  color: #d8dee9;
+  background: #2e3440;
 }
 
 #clock {
-  background-color: #D8DEE9;
   color: #282a36;
+  background-color: #d8dee9;
 }
 
 #battery {
@@ -89,14 +89,14 @@ window#waybar.hidden {
 
 @keyframes blink {
   to {
+    color: #2e3440;
     background-color: #ffffff;
-    color: #2E3440;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
   color: #ffffff;
+  background-color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -105,7 +105,7 @@ window#waybar.hidden {
 }
 
 label:focus {
-  background-color: #2E3440;
+  background-color: #2e3440;
 }
 
 #cpu {
@@ -118,8 +118,8 @@ label:focus {
 }
 
 #backlight.icon {
-  background: #D8DEE9;
-  color: #2E3440;
+  color: #2e3440;
+  background: #d8dee9;
 }
 
 #backlight.value {
@@ -127,7 +127,7 @@ label:focus {
 }
 
 #network {
-  color: #D8DEE9;
+  color: #d8dee9;
 }
 
 #network.disconnected {
@@ -135,8 +135,8 @@ label:focus {
 }
 
 #pulseaudio.icon {
-  background: #D8DEE9;
-  color: #2E3440;
+  color: #2e3440;
+  background: #d8dee9;
 }
 
 #pulseaudio.muted.icon {
@@ -145,9 +145,9 @@ label:focus {
 }
 
 #custom-media {
-  background-color: #66cc99;
-  color: #2a5c45;
   min-width: 100px;
+  color: #2a5c45;
+  background-color: #66cc99;
 }
 
 #custom-media.custom-spotify {
@@ -172,18 +172,18 @@ label:focus {
 }
 
 #custom-logo {
-  background: deeppink;
-  font-size: 1.15em;
   color: #282a36;
+  font-size: 1.15em;
+  background: deeppink;
 }
 
 #custom-emailicon,
 #custom-icon-cube {
-  background: #D8DEE9;
   color: #282a36;
+  background: #d8dee9;
 }
 
 #custom-unreademail {
-  background: #282a36;
   min-width: 15px;
+  background: #282a36;
 }

@@ -29,13 +29,12 @@ let g:mapleader = ','       " keybinding leader
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
-Plug 'arcticicestudio/nord-vim'                   " nord
+"Plug 'arcticicestudio/nord-vim'                   " nord
+Plug 'drewtempelmeyer/palenight.vim'              " palenight
 Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
 
 Plug 'preservim/nerdtree'                         " file manager plugin
 Plug 'preservim/nerdcommenter'                    " comments
-Plug 'alpertuna/vim-header'                       " file header generator
-Plug 'voldikss/vim-floaterm'                      " floating terminal
 Plug 'ryanoasis/vim-devicons'                     " add filetype icons
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}   " Language Server
@@ -77,16 +76,16 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-"colorscheme palenight                         " color theme
-"let g:palenight_terminal_italics=1
-"let g:airline_theme = "palenight"             " airline theme
+colorscheme palenight                         " color theme
+let g:palenight_terminal_italics=1
+let g:airline_theme = "palenight"             " airline theme
 
 "let ayucolor="mirage" " dark
 "colorscheme ayu
 "let g:airline_theme = "ayu"
 
-colorscheme nord
-let g:airline_theme = "nord"
+"colorscheme nord
+"let g:airline_theme = "nord"
 
 " indent line
 let g:indentLine_char = ''
