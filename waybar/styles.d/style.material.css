@@ -78,15 +78,6 @@ window#waybar.hidden {
   background-color: #d8dee9;
 }
 
-#battery {
-  /*background-color: #002147;*/
-}
-
-#battery.charging {
-  /*color: #ffffff;*/
-  /*background-color: #26a65b;*/
-}
-
 @keyframes blink {
   to {
     color: #2e3440;
@@ -108,14 +99,6 @@ label:focus {
   background-color: #2e3440;
 }
 
-#cpu {
-  /*background-color: #003366;*/
-  /*color: #000000;*/
-}
-
-#memory {
-  /*background-color: #08457e;*/
-}
 
 #backlight.icon {
   color: #2e3440;
@@ -158,17 +141,8 @@ label:focus {
   background-color: #ffa000;
 }
 
-#temperature {
-  /*background-color: #003366;*/
-}
-
 #temperature.critical {
   background-color: #eb4d4b;
-}
-
-#tray {
-  /*font-size: 22px;*/
-  /*background-color: #000133;*/
 }
 
 #custom-logo {
