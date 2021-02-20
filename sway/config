@@ -19,7 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $rofi rofi -combi-modi window,drun,ssh,run -theme material -icon-theme "Papirus" -show combi
-set $dmenu dmenu_run -l 15 -nb "#282a36" -nf "#fff" -sb "#50fa7b" -sf "#282a36" -fn "IBM Plex Mono" -p "exec:"
+set $dmenu dmenu_run -l 15 -nb "#282a36" -nf "#fff" -sb "#50fa7b" -sf "#282a36" -fn "Iosevka" -p "exec:"
 
 set $menu $dmenu
 
@@ -289,7 +289,7 @@ exec_always {
     # gsettings set $gnome-schema cursor-theme 'Enter Cursor Theme'
 }
 
-font pango:IBM Plex Mono 10
+font pango:Iosevka 10
 
 gaps outer 0
 gaps inner 0
@@ -311,7 +311,7 @@ client.unfocused            #2E3440     #2E3440     #D8DEE9     #5c6370     #2E3
 ######################################
 #          START SOME APPS           #
 ######################################
-# exec_always mpv 'https://www.youtube.com/watch?v=wkfyu9Sxr8g'   # play music
+exec_always mpv --loop-file='inf' 'https://www.youtube.com/watch?v=_pLO4jFDeIc'   # play music
 exec_always newsboat -x reload                                  # get feed articles
 
 include /etc/sway/config.d/*

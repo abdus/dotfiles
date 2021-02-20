@@ -94,9 +94,16 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 
 
+let g:airline_section_b = '%{getcwd()}'           " display cwd in sec-2 of the statusline
+let g:airline_powerline_fonts = 1                 " use powerline fonts in airline
 let g:airline#extensions#tabline#enabled = 1      " enable upper tabline
 let g:airline#extensions#tabline#fnamemod = ':t'  " no idea what this does
-let g:airline_powerline_fonts = 1                 " use powerline fonts in airline
+let g:airline#extensions#tabline#show_tab_count = 0 " tab count next to filename
+let g:airline#extensions#tabline#tab_min_count = 2 " show tabline when >= 2 tabs are open
+let g:airline#extensions#tabline#show_splits = 1  " enable the buffer name that displays on the right of the tabline
+let g:airline#extensions#tabline#show_tab_nr = 0  " disable tab numbers
+let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline
+let g:airline#extensions#tabline#tabs_label = ''  " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
 let g:airline#extensions#tabline#formatter =
       \'unique_tail_improved' " upper tabline filename formatter
 

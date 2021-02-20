@@ -86,3 +86,5 @@ alias swaylock="swaylock --screenshots --clock --indicator --indicator-radius 10
 function haste() {
   curl -XPOST 'https://hastebin.com/documents' --data-binary @-
 }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

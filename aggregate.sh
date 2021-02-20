@@ -14,6 +14,9 @@ function update_everything() {
   # sway
   rsync --out-format="%n" -La ~/.config/sway/* ./sway/
 
+  # awesome
+  rsync --out-format="%n" -La ~/.config/awesome/* ./awesome/
+
   # waybar
   rsync --out-format="%n" -a ~/.config/waybar/* ./waybar/
 
@@ -46,6 +49,9 @@ function update_everything() {
 
   # kitty
   rsync --out-format="%n" -La ~/.config/kitty/* ./kitty/
+
+  # mpv
+  rsync --out-format="%n" -La ~/.config/mpv/* ./mpv/
 
 }
 
