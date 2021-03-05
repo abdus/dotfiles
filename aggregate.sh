@@ -15,7 +15,7 @@ function update_everything() {
   rsync --out-format="%n" -La ~/.config/sway/* ./sway/
 
   # awesome
-  rsync --out-format="%n" -La ~/.config/awesome/* ./awesome/
+  #rsync --out-format="%n" -La ~/.config/awesome/* ./awesome/
 
   # waybar
   rsync --out-format="%n" -a ~/.config/waybar/* ./waybar/
