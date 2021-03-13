@@ -258,26 +258,24 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-#bar {
-    #position top
-    #status_command i3status
-    #separator_symbol ''
-    ##"  "
-    ## status_command waybar
+bar {
+    position top
+    status_command i3status
+    separator_symbol ''
+    #"  "
+     swaybar_command waybar
 
-    ## When the status_command prints a new line to stdout, swaybar updates.
-    ## The default just shows the current date and time.
-    ## status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    #colors {
-        #statusline #ffffff
-        #background #00000000
-        #inactive_workspace #32323200 #32323200 #5c5c5c
-    #}
-#}
+    colors {
+        statusline #ffffff
+        background #00000000
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
 
-# run waybar
-exec waybar
 
 # Applying GTK themes
 set $gnome-schema org.gnome.desktop.interface
@@ -295,14 +293,14 @@ gaps outer 0
 gaps inner 0
 smart_gaps on
 
-# hide_edge_borders smart_no_gaps
-default_border pixel 3
+hide_edge_borders smart_no_gaps
+default_border pixel 0  # 3
 
 # Window colors
 # class                     border      background  text        indicator   child_border
-client.focused              #D8DEE9     #D8DEE9     #2E3440     #ffffff     #D8DEE9
-# client.focused_inactive   #5c6370     #3b3228     #ffffff     #5c6370     #5c6370
-client.unfocused            #2E3440     #2E3440     #D8DEE9     #5c6370     #2E3440
+#client.focused              #D8DEE9     #D8DEE9     #2E3440     #ffffff     #D8DEE9
+client.focused_inactive     #011627     #011627     #011627     #011627     #011627
+client.unfocused            #011627     #011627     #615eff     #011627     #011627
 # client.urgent             #cb6077     #3b3228     #ffffff     #cb6077     #cb6077
 # client.placeholder        #000000     #3b3228     #ffffff     #000000     #0c0c0c
 # client.background 	      #fffffff    #ffffffa
@@ -313,5 +311,6 @@ client.unfocused            #2E3440     #2E3440     #D8DEE9     #5c6370     #2E3
 ######################################
 #exec_always mpv --loop-file='inf' ~/Music/TOP\ 40\ Songs\ of\ 2020\ 2021\ \(Best\ Hit\ Music\ Playlist\)\ on\ Spotify-_pLO4jFDeIc.webm   # play music
 exec_always newsboat -x reload                                  # get feed articles
+exec telegram-desktop -startintray
 
 include /etc/sway/config.d/*

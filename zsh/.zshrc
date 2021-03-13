@@ -17,10 +17,10 @@ export EDITOR="nvim"
 bindkey -v
 
 # Run neofetch on start-up
-clear && echo '' && echo '' && neofetch
+#clear && echo '' && echo '' && neofetch
 
 # Reload terminal
-alias reload="source ~/.zshrc"
+#alias reload="source ~/.zshrc"
 
 # Android Studio/React Native CLI Config
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -32,20 +32,20 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 #====    ask to launch sway when in tty1    ====================================
 TTY=$(tty)
 
-if [[ "$TTY" == "/dev/tty1" ]]; then
-  # change tty font
-  setfont ter-powerline-v18b.psf.gz
+#if [[ "$TTY" == "/dev/tty1" ]]; then
+  ## change tty font
+  #setfont ter-powerline-v18b.psf.gz
 
-  printf "Want to launch SwayWM? [yN] : ";
-  read RESP;
+  #printf "Want to launch SwayWM? [yN] : ";
+  #read RESP;
 
-  if [[ ("$RESP" == "y") || ("$RESP" == "Y") ]]; then
-    echo "Launching Sway ... ";
-    sway;
-  else
-    echo "Alright! Sway won't be launched."
-  fi
-fi
+  #if [[ ("$RESP" == "y") || ("$RESP" == "Y") ]]; then
+    #echo "Launching Sway ... ";
+    #sway;
+  #else
+    #echo "Alright! Sway won't be launched."
+  #fi
+#fi
 
 # fzf conf
 export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
@@ -55,7 +55,6 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 alias vim="/usr/bin/nvim"
 alias mutt="neomutt"
 
-alias cd="cd $1"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias 3.="cd ../../../"

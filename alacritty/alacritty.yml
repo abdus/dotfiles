@@ -148,7 +148,7 @@ font:
   #style: Bold Italic
 
   # Point size
-  size: 13 # set to 9 when on i3 and 13 when on sway
+  size: 12 # set to 9 when on i3 and 13 when on sway
 
 # Offset is the extra space around each character. `offset.y` can be thought of
 # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -185,33 +185,33 @@ font:
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # ayu dark
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#colors:
-  ## Default colors
-  #primary:
-    #background: '#1F2430'
-    #foreground: '#CBCCC6'
+colors:
+  # Default colors
+  primary:
+    background: '#1F2430'
+    foreground: '#CBCCC6'
 
-  ## Normal colors
-  #normal:
-    #black: '#1F2430'
-    #red: '#FF3333'
-    #green: '#BAE67E'
-    #yellow: '#FFA759'
-    #blue: '#73D0FF'
-    #magenta: '#F28779'
-    #cyan: '#39BAE6'
-    #white: '#FFFFFF'
+  # Normal colors
+  normal:
+    black: '#1F2430'
+    red: '#FF3333'
+    green: '#BAE67E'
+    yellow: '#FFA759'
+    blue: '#73D0FF'
+    magenta: '#F28779'
+    cyan: '#39BAE6'
+    white: '#FFFFFF'
 
-  ## Bright colors
-  #bright:
-    #black: '0x686868'
-    #red: '#F51818'
-    #green: '#A6CC70'
-    #yellow: '0xFFB454'
-    #blue: '0x59C2FF'
-    #magenta: '0xFFEE99'
-    #cyan: '0x95E6CB'
-    #white: '0xFFFFFF'
+  # Bright colors
+  bright:
+    black: '0x686868'
+    red: '#F51818'
+    green: '#A6CC70'
+    yellow: '0xFFB454'
+    blue: '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # gruvbox - https://github.com/morhetz/gruvbox
@@ -250,27 +250,44 @@ font:
 # adopted from https://github.com/bluz71/vim-nightfly-guicolors
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #colors:
+  ## Default colors
   #primary:
-    #background: '#011627'
-    #foreground: '#C3CCDC'
+    #background:        '#011627'
+    #foreground:        '#acb4c2'
+    #bright_foreground: '#eeeeee'
+
+  ## Cursor colors
+  #cursor:
+    #text:   '#080808'
+    #cursor: '#9ca1aa'
+
+  ## Selection colors
+  #selection:
+    #text:       '#080808'
+    #background: '#b2ceee'
+
+  ## Normal colors
   #normal:
-    #black:   '#011627'
-    #red:     '#FC514E'
-    #green:   '#A1CD5E'
-    #yellow:  '#E3D18A'
-    #blue:    '#82AAFF'
-    #magenta: '#ef1334'
-    #cyan:    '#22f7f3'
-    #white:   '#C3CCDC'
+    #black:   '#1d3b53'
+    #red:     '#fc514e'
+    #green:   '#a1cd5e'
+    #yellow:  '#e3d18a'
+    #blue:    '#82aaff'
+    #magenta: '#c792ea'
+    #cyan:    '#7fdbca'
+    #white:   '#a1aab8'
+
+  ## Bright colors
   #bright:
-    #black:   '#011627'
-    #red:     '#FF5874'
-    #green:   '#21C7A8'
-    #yellow:  '#ECC48D'
-    #blue:    '#AE81FF'
-    #magenta: '#d3869b'
-    #cyan:    '#8ec07c'
-    #white:   '#ebdbb2'
+    #black:   '#7c8f8f'
+    #red:     '#ff5874'
+    #green:   '#21c7a8'
+    #yellow:  '#ecc48d'
+    #blue:    '#82aaff'
+    #magenta: '#ae81ff'
+    #cyan:    '#7fdbca'
+    #white:   '#d6deeb'
+
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Dracula
@@ -357,54 +374,54 @@ font:
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # NORD
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-colors:
-  primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
-  cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  selection:
-    text: CellForeground
-    background: '#4c566a'
-  search:
-    matches:
-      foreground: CellBackground
-      background: '#88c0d0'
-    bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
-  normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#88c0d0'
-    white: '#e5e9f0'
-  bright:
-    black: '#4c566a'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#eceff4'
-  dim:
-    black: '#373e4d'
-    red: '#94545d'
-    green: '#809575'
-    yellow: '#b29e75'
-    blue: '#68809a'
-    magenta: '#8c738c'
-    cyan: '#6d96a5'
-    white: '#aeb3bb'
+#colors:
+  #primary:
+    #background: '#2e3440'
+    #foreground: '#d8dee9'
+    #dim_foreground: '#a5abb6'
+  #cursor:
+    #text: '#2e3440'
+    #cursor: '#d8dee9'
+  #vi_mode_cursor:
+    #text: '#2e3440'
+    #cursor: '#d8dee9'
+  #selection:
+    #text: CellForeground
+    #background: '#4c566a'
+  #search:
+    #matches:
+      #foreground: CellBackground
+      #background: '#88c0d0'
+    #bar:
+      #background: '#434c5e'
+      #foreground: '#d8dee9'
+  #normal:
+    #black: '#3b4252'
+    #red: '#bf616a'
+    #green: '#a3be8c'
+    #yellow: '#ebcb8b'
+    #blue: '#81a1c1'
+    #magenta: '#b48ead'
+    #cyan: '#88c0d0'
+    #white: '#e5e9f0'
+  #bright:
+    #black: '#4c566a'
+    #red: '#bf616a'
+    #green: '#a3be8c'
+    #yellow: '#ebcb8b'
+    #blue: '#81a1c1'
+    #magenta: '#b48ead'
+    #cyan: '#8fbcbb'
+    #white: '#eceff4'
+  #dim:
+    #black: '#373e4d'
+    #red: '#94545d'
+    #green: '#809575'
+    #yellow: '#b29e75'
+    #blue: '#68809a'
+    #magenta: '#8c738c'
+    #cyan: '#6d96a5'
+    #white: '#aeb3bb'
 
 
 

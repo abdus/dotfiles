@@ -1,1 +1,163 @@
-styles.d/style.material.css
+* {
+  min-height: 0;
+  font-size: 14px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Font Awesome 5 Free", "Iosevka", Roboto, Helvetica, Arial,
+    sans-serif;
+  border: none;
+  border-radius: 0;
+  /*font-weight: bold;*/
+}
+
+window#waybar {
+  color: #ffffff;
+  background-color: transparent;
+  border-bottom: none;
+  transition-duration: 0.5s;
+  transition-property: background-color;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  margin: 0px 0;
+  padding: 0.5rem 0.9rem;
+  background: #2e3440;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  color: #ffffff;
+  background: rgba(0, 1, 51, 0.6);
+  box-shadow: inherit;
+}
+
+#workspaces button.focused {
+  color: #2e3440;
+  background: #d8dee9;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  color: #ffa000;
+  background-color: #000133;
+  /* border-bottom: 3px solid #ffffff; */
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-logo,
+#custom-emailicon,
+#custom-unreademail,
+#custom-pacman-package-count,
+#custom-icon-cube {
+  margin: 0px 0;
+  padding: 0.5rem 0.9rem;
+  color: #d8dee9;
+  background: #2e3440;
+}
+
+#clock {
+  color: #282a36;
+  background-color: #d8dee9;
+}
+
+@keyframes blink {
+  to {
+    color: #2e3440;
+    background-color: #ffffff;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: #ffffff;
+  background-color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #2e3440;
+}
+
+
+#backlight.icon {
+  color: #2e3440;
+  background: #d8dee9;
+}
+
+#backlight.value {
+  min-width: 20px;
+}
+
+#network {
+  color: #d8dee9;
+}
+
+#network.disconnected {
+  color: #ff0000;
+}
+
+#pulseaudio.icon {
+  color: #2e3440;
+  background: #d8dee9;
+}
+
+#pulseaudio.muted.icon {
+  background-color: gray;
+  /*color: #2a5c45;*/
+}
+
+#custom-media {
+  min-width: 100px;
+  color: #2a5c45;
+  background-color: #66cc99;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#custom-logo {
+  color: #282a36;
+  font-size: 1.15em;
+  background: deeppink;
+}
+
+#custom-emailicon,
+#custom-icon-cube {
+  color: #282a36;
+  background: #d8dee9;
+}
+
+#custom-unreademail {
+  min-width: 15px;
+  background: #282a36;
+}

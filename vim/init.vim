@@ -20,6 +20,7 @@ set background=dark         " dark background
 set lbr wrap nolist         " breaks line whenever needed/on resize
 set cursorline              " highlight cursorline
 set splitbelow splitright   " new windows below and right of the current one
+set foldmethod=indent       " fold syntax based on indentation
 
 au BufRead,BufNewFile *.md set textwidth=80   " wrap lines exceeding 80 chars
 
@@ -29,8 +30,8 @@ let g:mapleader = ','       " keybinding leader
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'vim-airline/vim-airline'                    " airline (bottom bar)
-"Plug 'arcticicestudio/nord-vim'                   " nord
-Plug 'drewtempelmeyer/palenight.vim'              " palenight
+Plug 'ayu-theme/ayu-vim'                          " nord
+"Plug 'drewtempelmeyer/palenight.vim'              " palenight
 Plug 'chrisbra/Colorizer'                         " highlight colorcodes and names
 
 Plug 'preservim/nerdtree'                         " file manager plugin
@@ -76,13 +77,13 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme palenight                         " color theme
-let g:palenight_terminal_italics=1
-let g:airline_theme = "palenight"             " airline theme
+"colorscheme palenight                         " color theme
+"let g:palenight_terminal_italics=1
+"let g:airline_theme = "palenight"             " airline theme
 
-"let ayucolor="mirage" " dark
-"colorscheme ayu
-"let g:airline_theme = "ayu"
+let ayucolor="mirage" " dark
+colorscheme ayu
+let g:airline_theme = "ayu"
 
 "colorscheme nord
 "let g:airline_theme = "nord"
@@ -177,6 +178,7 @@ let g:fzf_buffers_jump = 1              " jump to existing buffer if possible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeShowLineNumbers = 1
 autocmd FileType nerdtree setlocal relativenumber
+:let g:NERDTreeWinSize=40
 
 
 
@@ -265,7 +267,7 @@ let g:header_field_timestamp_format = '%d %B, %Y %H:%M'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <C-CR> <CR><Esc>kA<CR>|    " indented newline on Ctrl + Enter
 inoremap ii <esc>|                  " use ii to exit modes
-inoremap <C-b> <esc>lce
+" inoremap <C-b> <esc>lce
 
 nnoremap
       \ <silent><expr> <Leader>H

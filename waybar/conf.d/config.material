@@ -6,6 +6,7 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/logo",
+
         "sway/mode",
         "pulseaudio#icon",
         "pulseaudio#sound",
@@ -16,7 +17,7 @@
         "custom/icon-cube",
         "custom/pacman-package-count"
     ],
-    "modules-center": ["sway/workspaces"],
+    "modules-center": ["sway/workspaces",],
     "modules-right": ["network", "cpu", "battery", "battery#bat2", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -82,12 +83,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "",
+        "format-wifi": "{bandwidthUpBits} <span color='limegreen'></span><span color='limegreen'></span> {bandwidthDownBits}   ",
         "format-ethernet": "",
         "format-linked": "(No IP) ",
         "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "interval": 20,
+        "interval": 1,
         "signal": 1
     },
     "pulseaudio#sound": {
