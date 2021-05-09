@@ -1,4 +1,13 @@
 {
   "typescript.validate.enable": false,
-  "javascript.suggestionActions.enabled": false
+  "javascript.suggestionActions.enabled": false,
+  "java.format.enabled": true,
+  "java.format.comments.enabled": true,
+  "java.format.onType.enabled": true,
+  "java.referencesCodeLens.enabled": true,
+  "codeLens.enable": true,
+  "java.home": "/usr/lib/jvm/java-15-openjdk/",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "java"
+  ]
 }

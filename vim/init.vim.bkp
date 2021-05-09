@@ -266,19 +266,6 @@ function! s:show_documentation()
 endfunction
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >- coc.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! s:GitAddCommit()
-    exe "G add %"
-    exe "G diff --staged"
-    exe "only"
-    exe "G commit"
-endfunction
-:command! GitAddCommit :call s:GitAddCommit()
-nnoremap gic :GitAddCommit<CR>
-
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

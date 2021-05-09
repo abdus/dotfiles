@@ -17,7 +17,7 @@
         "custom/icon-cube",
         "custom/pacman-package-count"
     ],
-    "modules-center": ["sway/workspaces",],
+    "modules-center": ["sway/workspaces"],
     "modules-right": ["network", "cpu", "battery", "battery#bat2", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"

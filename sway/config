@@ -26,7 +26,7 @@ set $menu $dmenu
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background $HOME/Pictures/wallpaper/29.jpg fill
+output * background $HOME/Pictures/wallpaper/35.jpg fill
 #
 # Example configuration:
 #
@@ -62,7 +62,7 @@ input * {
 }
 
 input "type:keyboard" {
-    xkb_options caps:escape
+    #xkb_options caps:escape
     #repeat_rate 10
     repeat_delay 150
 }
