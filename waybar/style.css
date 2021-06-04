@@ -9,7 +9,17 @@
   /*font-weight: bold;*/
 }
 
+.horizontal {
+  padding: 2px;
+}
+
+/*.horizontal:nth-child(2) {*/
+  /*padding: 0;*/
+/*}*/
+
+
 window#waybar {
+  padding: 1000px;
   color: #ffffff;
   background-color: transparent;
   border-bottom: none;
@@ -22,9 +32,10 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  margin: 0px 0;
-  padding: 0.5rem 0.9rem;
+  margin: 0px 0px;
+  padding: 0.5rem;
   background: #2e3440;
+  border-radius: 0.4rem;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -67,10 +78,13 @@ window#waybar.hidden {
 #custom-unreademail,
 #custom-pacman-package-count,
 #custom-icon-cube {
-  margin: 0px 0;
+  margin: 0px 2px;
   padding: 0.5rem 0.9rem;
-  color: #d8dee9;
-  background: #2e3440;
+  /*color: #d8dee9;*/
+  /*background: #2e3440;*/
+  color: #2e3440;
+  background: #f2bb9a;
+  border-radius: 0.4rem;
 }
 
 #clock {
@@ -99,7 +113,6 @@ label:focus {
   background-color: #2e3440;
 }
 
-
 #backlight.icon {
   color: #2e3440;
   background: #d8dee9;
@@ -107,10 +120,6 @@ label:focus {
 
 #backlight.value {
   min-width: 20px;
-}
-
-#network {
-  color: #d8dee9;
 }
 
 #network.disconnected {

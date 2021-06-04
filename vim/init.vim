@@ -22,7 +22,11 @@ set cursorline              " highlight cursorline
 set splitbelow splitright   " new windows below and right of the current one
 set foldmethod=indent       " fold syntax based on indentation
 
-au BufRead,BufNewFile *.md set textwidth=80   " wrap lines exceeding 80 chars
+"au BufRead,BufNewFile *.md set textwidth=80   " wrap lines exceeding 80 chars
+"au BufRead,BufNewFile *.txt set textwidth=80   " wrap lines exceeding 80 chars
+
+autocmd FileType scss setl iskeyword+=@-@
+autocmd FileType sass setl iskeyword+=@-@
 
 let g:mapleader = ','       " keybinding leader
 
@@ -96,7 +100,7 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 
 
-let g:airline_section_b = '%{getcwd()}'           " display cwd in sec-2 of the statusline
+"let g:airline_section_b = '%{getcwd()}'           " display cwd in sec-2 of the statusline
 let g:airline_powerline_fonts = 1                 " use powerline fonts in airline
 let g:airline#extensions#tabline#enabled = 1      " enable upper tabline
 let g:airline#extensions#tabline#fnamemod = ':t'  " no idea what this does
@@ -157,10 +161,14 @@ let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 " >- vim-wiki.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let wiki_default = {}
+let wiki_default.ext = ".md"
 let wiki_default.path = "~/vimwiki/"
 let wiki_default.syntax = "markdown"
-let wiki_default.ext = ".md"
 let wiki_default.path_html = "/tmp/vimwiki_html"
+let wiki_default.template_ext = ".tpl"
+let wiki_default.template_path = "~/vimwiki/templates/"
+let wiki_default.template_default = "default"
+let wiki_default.custom_wiki2html = "vimwiki_markdown"
 
 let g:vimwiki_list = [wiki_default]
 let g:vimwiki_global_ext = 0
@@ -279,6 +287,21 @@ endfunction
 nnoremap gic :GitAddCommit<CR>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- set go template page type
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function DetectGoHtmlTmpl()
+    if expand('%:e') == "html" && search("{{") != 0
+        set filetype=gohtmltmpl 
+    endif
+endfunction
+
+augroup filetypedetect
+    au! BufRead,BufNewFile * call DetectGoHtmlTmpl()
+augroup END
+
+
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -313,6 +336,14 @@ map <F7> :tabp<CR>|                         " move to previous tab
 map <F8> :tabn<CR>|                         " move to next tab
 map <Leader>tc :tabclose<CR>|               " close current tab
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >- moving around
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

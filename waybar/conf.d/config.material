@@ -1,7 +1,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    //"height": 20, // Waybar height (to be removed for auto height)
+    // "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
@@ -83,7 +83,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{bandwidthUpBits} <span color='limegreen'></span><span color='limegreen'></span> {bandwidthDownBits}   ",
+        // "format-wifi": "{bandwidthUpBits} <span color='limegreen'></span><span color='limegreen'></span> {bandwidthDownBits}   ",
+        "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "(No IP) ",
         "format-disconnected": "",
