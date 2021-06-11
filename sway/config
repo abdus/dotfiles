@@ -26,7 +26,7 @@ set $menu $dmenu
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background $HOME/Pictures/wallpaper/27.png fill
+output * background $HOME/Pictures/wallpaper/37.jpg fill
 #
 # Example configuration:
 #
@@ -169,10 +169,10 @@ input "type:keyboard" {
     bindsym $mod+Ctrl+t exec telegram-desktop
 
     # Take screenshot
-    bindsym Print exec grim "$HOME/Pictures/screenshots/$(date +%F\ %T).png"
+    bindsym Print exec grim - | swappy -f -
 
     # Take screenshot by selecting a region
-    bindsym Shift+Print exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +%F\ %T).png"
+    bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 
     # Open Discord
     bindsym $mod+Ctrl+d exec discord
@@ -294,7 +294,7 @@ gaps inner 7
 smart_gaps on
 
 # for some reason, `gaps outer -7` does not work
-exec swaymsg gaps outer all set -- -7
+exec_always swaymsg gaps outer all set -- -7
 
 hide_edge_borders smart_no_gaps
 default_border pixel 0  # 3

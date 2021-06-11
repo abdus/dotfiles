@@ -53,6 +53,8 @@ function update_everything() {
   # mpv
   rsync --out-format="%n" -La --exclude=watch_later ~/.config/mpv/* ./mpv/
 
+  # swappy
+  rsync --out-format="%n" -La ~/.config/swappy/* ./swappy/
 }
 
 if [[ $COMMAND == "clean" ]]; then
